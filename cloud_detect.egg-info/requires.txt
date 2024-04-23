@@ -1,0 +1,13 @@
+flask==3.0
+loguru
+numpy==1.26
+opencv-python-headless>=4.9
+
+[dev]
+ruff
+mypy
+pytest
+ipykernel
+matplotlib
+requests
+locust

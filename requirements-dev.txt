@@ -1,0 +1,7 @@
+ruff
+mypy
+pytest
+ipykernel
+matplotlib
+requests
+locust

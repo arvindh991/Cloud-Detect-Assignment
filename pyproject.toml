@@ -1,0 +1,71 @@
+[build-system]
+requires = [
+  "setuptools>=61.0.0",
+  "versioningit>=2.2.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloud_detect"
+description = "Cloud-based tool for segmenting objects within images."
+authors = [
+    { name = "Raghavan Arvindh", email = "arvindh8@gmail.com" }
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.10"
+dynamic = ["readme", "version", "dependencies", "optional-dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+optional-dependencies = {dev = {file = ["requirements-dev.txt"]}}
+readme = {file = "README.md"}
+
+[tool.setuptools]
+packages = ["cloud_detect"]
+
+[tool.versioningit]
+
+[tool.versioningit.write]
+file = "cloud_detect/_version.py"
+
+[tool.versioningit.next-version]
+method = "smallest"
+
+[tool.versioningit.format]
+distance = "{next_version}.dev{distance}+{vcs}{rev}"
+dirty = "{base_version}+d{build_date:%Y%m%d}"
+distance-dirty = "{next_version}.dev{distance}+{vcs}{rev}.d{build_date:%Y%m%d}"
+
+[tool.ruff]
+select = [
+    "E",  # pycodestyle
+    "F",  # pyflakes
+    "I",  # isort
+    "UP", # pyupgrade
+    "D",  # pydocstyle
+    "W",
+    "I001",
+]
+ignore = [
+    "E501", # line too long
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+"tests/**/test_*" = ["D100", "D101", "D102", "D103"]
+
+
+[tool.pyright]
+ignore = [
+    "tasks.py",
+]
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    ]

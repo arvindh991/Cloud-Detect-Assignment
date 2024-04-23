@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+requirements-dev.txt
+requirements.txt
+cloud_detect/__init__.py
+cloud_detect/_version.py
+cloud_detect/api.py
+cloud_detect/io.py
+cloud_detect/object_detection.py
+cloud_detect.egg-info/PKG-INFO
+cloud_detect.egg-info/SOURCES.txt
+cloud_detect.egg-info/dependency_links.txt
+cloud_detect.egg-info/requires.txt
+cloud_detect.egg-info/top_level.txt

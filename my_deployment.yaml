@@ -1,0 +1,19 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: cloud-detect-deployment
+spec:
+  selector:
+    matchLabels: 
+      app: cloud-detect
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata: 
+      labels:
+        app: cloud-detect
+    spec:
+      containers:
+      - name: cloud-detect
+        image: cloud-detect:latest
+        ports:
+        - containerPort: 5000

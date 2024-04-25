@@ -7,7 +7,7 @@ image_dir = Path("../data/images")
 images = list(image_dir.glob("*.jpg"))
 
 class ObjectDetector(HttpUser):
-    host = "http://localhost:5000"
+    host = "http://168.138.31.171:30005/"
     wait_time = between(1, 5)
 
     @task
